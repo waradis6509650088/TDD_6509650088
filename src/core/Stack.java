@@ -25,7 +25,7 @@ public class Stack implements Istack{
 	public void push(Object elm) throws Exception {
 		if(currentSize != 0) {
 			if(elm.getClass().equals(stack[0].getClass())) {
-				if(currentSize < maxSize) {
+				if(currentSize < maxSize - 1) {
 					currentSize++;
 					stack[currentSize] = elm;
 				}

@@ -30,6 +30,46 @@ public class StackTestCases extends TestCase {
 	}
 	
 	//TC3
+	public void testLIFO() {
+		Stack s1 = new Stack(5);
+		try {
+			s1.push(1);
+			s1.push(2);
+			s1.push(3);
+			s1.push(4);
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		try {
+			assertEquals(4, s1.pop());
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		
+	}
+	
+	//TC4
+	public void pushToFull() {
+		Stack s1 = new Stack(5);
+		try {
+			s1.push(1);
+			s1.push(2);
+			s1.push(3);
+			s1.push(4);
+			s1.push(5);
+			s1.push(6);
+			fail("exception not thrown.");
+		}
+		catch(Exception e) {
+			assertEquals("stack size exceeded.", e.getMessage());
+		}
+	}
+	
+	//TC5
 	public void testPushSameElement() throws Exception{
 		Stack s1 = new Stack(10);
 		try {
@@ -42,5 +82,6 @@ public class StackTestCases extends TestCase {
 		}
 	}
 	
-	//TC4
+	
+	
 }
