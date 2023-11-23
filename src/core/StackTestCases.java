@@ -15,12 +15,12 @@ public class StackTestCases extends TestCase {
 	
 	//TC2
 	public void testPushElmToTop() {
-		Stack s1 = new Stack(4);
+		Stack s1 = new Stack(5);
 		try {
 			s1.push(1);
 			s1.push(2);
 			s1.push(3);
-
+			s1.push(4);
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
