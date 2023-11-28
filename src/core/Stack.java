@@ -24,18 +24,17 @@ public class Stack implements Istack{
 	@Override
 	public void push(Object elm) throws Exception {
 		if(!isEmpty()) {
-			if(elm.getClass().equals(stack[0].getClass())) {
-				if(currentSize < maxSize) {
-					stack[currentSize] = elm;
-					currentSize++;
-					
-				}
-				else {
-					throw new Exception("stack size exceeded.");
-				}
+			if(currentSize < maxSize) {
+				if(elm.getClass().equals(stack[0].getClass())) {
+						stack[currentSize] = elm;
+						currentSize++;
+					}
+					else {
+						throw new Exception("All elements in the stack must be of the same type.");
+					}
 			}
 			else {
-				throw new Exception("All elements in the stack must be of the same type.");
+				throw new Exception("stack size exceeded.");
 			}
 		}
 		else {

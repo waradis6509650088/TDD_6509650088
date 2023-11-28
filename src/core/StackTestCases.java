@@ -26,7 +26,6 @@ public class StackTestCases extends TestCase {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println(s1.getSize());
 		assertEquals(4, s1.top());
 	}
 	
@@ -54,7 +53,7 @@ public class StackTestCases extends TestCase {
 	}
 	
 	//TC4
-	public void pushToFull() {
+	public void pushToFull(){
 		Stack s1 = new Stack(5);
 		try {
 			s1.push(1);
@@ -71,7 +70,7 @@ public class StackTestCases extends TestCase {
 	}
 	
 	//TC5
-	public void testPushSameElement() throws Exception{
+	public void testPushSameElement(){
 		Stack s1 = new Stack(10);
 		try {
 			s1.push(1);
