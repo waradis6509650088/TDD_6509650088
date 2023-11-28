@@ -7,7 +7,7 @@ public class Stack implements Istack{
 	
 	public Stack(int inSize) {
 		maxSize = inSize;
-		stack = new Object[maxSize];
+		stack = new Object[inSize];
 		currentSize = 0;
 	}
 
@@ -18,16 +18,17 @@ public class Stack implements Istack{
 
 	@Override
 	public boolean isEmpty() {
-		return currentSize == 0? true : false;
+		return currentSize < 1? true : false;
 	}
 
 	@Override
 	public void push(Object elm) throws Exception {
-		if(currentSize != 0) {
+		if(!isEmpty()) {
 			if(elm.getClass().equals(stack[0].getClass())) {
-				if(currentSize < maxSize - 1) {
-					currentSize++;
+				if(currentSize < maxSize) {
 					stack[currentSize] = elm;
+					currentSize++;
+					
 				}
 				else {
 					throw new Exception("stack size exceeded.");
@@ -38,17 +39,16 @@ public class Stack implements Istack{
 			}
 		}
 		else {
-			stack[currentSize++] = elm;
+			stack[currentSize] = elm;
+			currentSize++;
+			
 		}
-		
-		
-		
 	}
 	
 	@Override
 	public Object pop() throws Exception{
 		if(currentSize > 0) {
-			return stack[currentSize--];
+			return stack[--currentSize];
 		}
 		else {
 			throw new Exception("there is nothing in the stack.");
@@ -58,12 +58,12 @@ public class Stack implements Istack{
 
 	@Override
 	public Object top() {
-		return stack[currentSize];
+		return stack[currentSize - 1];
 	}
 
 	@Override
 	public boolean isFull() {
-		return currentSize == maxSize? true : false;
+		return currentSize == maxSize - 1? true : false;
 	}
 
 }

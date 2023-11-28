@@ -15,35 +15,36 @@ public class StackTestCases extends TestCase {
 	
 	//TC2
 	public void testPushElmToTop() {
-		Stack s1 = new Stack(5);
+		Stack s1 = new Stack(4);
 		try {
 			s1.push(1);
 			s1.push(2);
 			s1.push(3);
 			s1.push(4);
+			
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-
+		System.out.println(s1.getSize());
 		assertEquals(4, s1.top());
 	}
 	
 	//TC3
 	public void testLIFO() {
-		Stack s1 = new Stack(5);
+		Stack s2 = new Stack(5);
 		try {
-			s1.push(1);
-			s1.push(2);
-			s1.push(3);
-			s1.push(4);
+			s2.push(1);
+			s2.push(2);
+			s2.push(3);
+			s2.push(4);
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
 		
 		try {
-			assertEquals(4, s1.pop());
+			assertEquals(4, s2.pop());
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
